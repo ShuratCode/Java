@@ -47,4 +47,8 @@ public class StreamOperators {
                                   .findFirst()
                                   .orElse(null);
     }
+
+    public void streamToArray() {
+        Employee[] employees = empList.stream().toArray(Employee[]::new);
+    }
 }
