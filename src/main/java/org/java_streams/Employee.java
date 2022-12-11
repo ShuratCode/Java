@@ -12,6 +12,10 @@ public class Employee {
         this.salary = salary;
     }
 
+    public int id() {
+        return id;
+    }
+
     public void salaryIncrement(double raise) {
         salary += raise;
     }

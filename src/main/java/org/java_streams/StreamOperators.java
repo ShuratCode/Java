@@ -2,6 +2,8 @@ package org.java_streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamOperators {
 
@@ -15,5 +17,13 @@ public class StreamOperators {
 
     public void streamForEach() {
         empList.stream().forEach(emp -> emp.salaryIncrement(10.0));
+    }
+
+    public void streamMap() {
+        Integer[] empIds = {1, 2, 3};
+
+        List<Employee> employees = Stream.of(empIds)
+                                         .map(EmployeeRepository::findById)
+                                         .collect(Collectors.toList());
     }
 }
