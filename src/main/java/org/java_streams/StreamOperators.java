@@ -1,6 +1,7 @@
 package org.java_streams;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -50,5 +51,14 @@ public class StreamOperators {
 
     public void streamToArray() {
         Employee[] employees = empList.stream().toArray(Employee[]::new);
+    }
+
+    public void streamFlatMap() {
+        List<List<String>> namesNested = Arrays.asList(Arrays.asList("Jeff", "Bezos"), Arrays.asList("Bill", "Gates"),
+                                                       Arrays.asList("Mark", "Zuckerberg"));
+
+        List<String> namesFlatStream = namesNested.stream()
+                                                  .flatMap(Collection::stream)
+                                                  .collect(Collectors.toList());
     }
 }
