@@ -26,4 +26,14 @@ public class StreamOperators {
                                          .map(EmployeeRepository::findById)
                                          .collect(Collectors.toList());
     }
+
+    public void streamFilter() {
+        Integer[] empIds = {1, 2, 3};
+
+        List<Employee> employees = Stream.of(empIds)
+                                         .map(EmployeeRepository::findById)
+                                         .filter(e -> e != null)
+                                         .filter(e -> e.salary() > 100)
+                                         .collect(Collectors.toList());
+    }
 }
