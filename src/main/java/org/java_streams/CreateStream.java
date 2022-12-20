@@ -26,5 +26,13 @@ public class CreateStream {
         empStreamBuilder.accept(arrayOfEmps[2]);
 
         Stream<Employee> empStream = empStreamBuilder.build();
+
+        StreamOperators streamOperators = new StreamOperators();
+        streamOperators.streamSummarizingDouble();
+        streamOperators.streamPartitioningBy();
+        streamOperators.streamGroupingBy();
+        streamOperators.streamMapping();
+        streamOperators.streamReducing();
+        streamOperators.streamParallel();
     }
 }

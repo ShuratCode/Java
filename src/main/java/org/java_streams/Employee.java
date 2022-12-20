@@ -23,4 +23,13 @@ public class Employee {
     public void salaryIncrement(double raise) {
         salary += raise;
     }
+
+    public String name() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "{ \"id\": " + id + ", \"name\": " + name + ", \"salary\": " + salary + "}";
+    }
 }
